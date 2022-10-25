@@ -1,7 +1,7 @@
 Particle[] particles = new Particle[1001];
 void setup(){
   noStroke();
-  background(0, 0, 0, 20.0);
+  background(0, 0, 0, 240.0);
   size(1000, 1000);
   for(int i = 1; i < particles.length; i++){
     particles[i] = new Particle();
@@ -10,7 +10,7 @@ void setup(){
 }
 
 void draw(){
-  background(0, 0, 0, 20.0);
+  background(0, 0, 0, 240.0);
   particles[0].move();
   particles[0].show();
   for(int i = 1; i < particles.length; i++){
