@@ -11,12 +11,12 @@ void setup(){
 
 void draw(){
   background(0);
+  particles[0].move();
+  particles[0].show();
   for(int i = 1; i < particles.length; i++){
     particles[i].move();
     particles[i].show();
   }
-  particles[0].move();
-  particles[0].show();
 }
 
 class Particle{
@@ -25,7 +25,7 @@ class Particle{
   Particle(){
     myAngle = Math.random()*2*Math.PI;
     myCol = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-    mySpeed = Math.random()*20;
+    mySpeed = Math.random()*20 + 10;
     myX = Math.random()*200 + 400;
     myY = Math.random()*200 + 400;
   }
@@ -43,7 +43,7 @@ class Oddball extends Particle {
   Oddball(){
     myAngle = Math.random()*2*Math.PI;
     myCol = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-    mySpeed = Math.random()*20;
+    mySpeed = Math.random()*20 + 10;
     myX = Math.random()*200 + 400;
     myY = Math.random()*200 + 400;
   }
