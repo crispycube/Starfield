@@ -1,7 +1,7 @@
 Particle[] particles = new Particle[1001];
 void setup(){
   noStroke();
-  background(0, 0, 0, 100);
+  background(0.0, 20.0);
   size(1000, 1000);
   for(int i = 1; i < particles.length; i++){
     particles[i] = new Particle();
@@ -10,7 +10,7 @@ void setup(){
 }
 
 void draw(){
-  background(0);
+  background(0.0, 20.0);
   particles[0].move();
   particles[0].show();
   for(int i = 1; i < particles.length; i++){
@@ -25,7 +25,7 @@ class Particle{
   Particle(){
     myAngle = Math.random()*2*Math.PI;
     myCol = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-    mySpeed = Math.random()*20 + 10;
+    mySpeed = Math.random()*20 + 5;
     myX = Math.random()*200 + 400;
     myY = Math.random()*200 + 400;
   }
@@ -41,15 +41,15 @@ class Particle{
 
 class Oddball extends Particle {
   Oddball(){
-    myAngle = Math.random()*2*Math.PI;
+    myAngle = Math.random()*2*Math.PI;   
     myCol = color((int)(Math.random()*255), (int)(Math.random()*255), (int)(Math.random()*255));
-    mySpeed = Math.random()*20 + 10;
+    mySpeed = Math.random()*20 + 5;
     myX = Math.random()*200 + 400;
     myY = Math.random()*200 + 400;
   }
   void move(){
-    myX += Math.cos(myAngle) * mySpeed/2;
-    myY += Math.sin(myAngle) * mySpeed/2;
+    myX += Math.cos(myAngle) * mySpeed/3;
+    myY += Math.sin(myAngle) * mySpeed/3;
   }
   void show(){
     fill(myCol);
