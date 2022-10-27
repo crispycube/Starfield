@@ -1,8 +1,10 @@
 Particle[] particles = new Particle[1001];
 void setup(){
   noStroke();
-  background(0, 0, 0, 240.0);
+  background(0);
   size(1000, 1000);
+  fill(0, 50);
+  rect(0, 0, 1000, 1000);
   for(int i = 1; i < particles.length; i++){
     particles[i] = new Particle();
   }
@@ -10,7 +12,8 @@ void setup(){
 }
 
 void draw(){
-  background(0, 0, 0, 240.0);
+  fill(0, 50);
+  rect(0, 0, 1000, 1000);
   particles[0].move();
   particles[0].show();
   for(int i = 1; i < particles.length; i++){
@@ -30,8 +33,8 @@ class Particle{
     myY = Math.random()*200 + 400;
   }
   void move(){
-    myX += Math.cos(myAngle) * mySpeed;
-    myY += Math.sin(myAngle) * mySpeed;
+    myX += Math.cos(myAngle) * mySpeed/5;
+    myY += Math.sin(myAngle) * mySpeed/5;
   }
   void show(){
     fill(myCol);
@@ -48,8 +51,8 @@ class Oddball extends Particle {
     myY = Math.random()*200 + 400;
   }
   void move(){
-    myX += Math.cos(myAngle) * mySpeed/3;
-    myY += Math.sin(myAngle) * mySpeed/3;
+    myX += Math.cos(myAngle) * mySpeed/7;
+    myY += Math.sin(myAngle) * mySpeed/7;
   }
   void show(){
     fill(myCol);
